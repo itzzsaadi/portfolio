@@ -52,23 +52,57 @@ export interface SocialLink {
   icon: string;
 }
 
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  period: string;
+  cgpa?: string;
+  marks?: string;
+  grade?: string;
+}
+
 // ─── Profile Data ────────────────────────────────────────────────────────────
 
 export const profile = {
   name: "Saad Naseer",
-  title: "Full Stack Developer & Applied AI Integrator",
+  title: "Full Stack Developer",
   location: "Lahore, Pakistan",
   email: "saadnaseer146@gmail.com",
   phone: "+92 304 5297606",
-  bio: "I build robust, full-stack applications that bridge modern web technologies with applied AI — from enterprise financial platforms to fine-tuned LLM vulnerability scanners. Currently pursuing my BS in Computer Science at UCP with a 3.46 CGPA, while shipping production systems for real clients.",
+  whatsapp: "+92 304 5297606",
+  whatsappUrl: "https://wa.me/923045297606",
+  bio: "I don’t just write code, I ship intelligent systems that solve real business problems. Full-stack software developer specializing in scalable web architectures and applied AI from secure platforms to automated systems. Built on solid computer science fundamentals, proven in production.",
   resumeUrl: "/Saad_Naseer_CV_Latest.pdf",
-  avatarUrl: "/Saad.PNG",
+  avatarUrl: "/Saad.png",
   education: {
     degree: "BS Computer Science",
     institution: "University of Central Punjab (UCP)",
     period: "2022 – 2026",
     cgpa: "3.46 / 4.0",
   },
+  educations: [
+    {
+      degree: "BS Computer Science",
+      institution: "University of Central Punjab (UCP)",
+      period: "2022 – 2026",
+      cgpa: "3.46 / 4.0",
+      grade: "A+",
+    },
+    {
+      degree: "HSSC - ICS (Phy)",
+      institution: "Punjab College of Science, Gujranwala",
+      period: "2020 – 2022",
+      marks: "931 / 1100",
+      grade: "A",
+    },
+    {
+      degree: "SSC - Science (Computer)",
+      institution: "Science Locus High School (For Boys), Gujranwala",
+      period: "2018 – 2020",
+      marks: "1049 / 1100",
+      grade: "A+",
+    },
+  ],
 };
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
@@ -160,7 +194,7 @@ export const projects: Project[] = [
     title: "CDC Lab Accounts System",
     tagline: "Full-stack financial & asset management platform",
     description:
-      "A comprehensive financial and asset tracking platform for CDC Diagnostic Laboratories. Features role-based access control, multi-branch accounting, automated reporting, and real-time asset lifecycle management — eliminating manual bottlenecks across all branches.",
+      "A comprehensive financial and asset tracking platform for CDC Diagnostic Laboratories. Features role-based access control, multi-branch accounting, automated reporting, and real-time asset lifecycle management. Eliminating manual bottlenecks.",
     image: "/projects/cdc-lab.jpg",
     techStack: [
       "Next.js",
@@ -173,7 +207,7 @@ export const projects: Project[] = [
       "Playwright",
     ],
     liveDemoUrl: null,
-    githubUrl: null,
+    githubUrl: "https://github.com/itzzsaadi/cdc-labs-account",
     architecture:
       "App Router-based Next.js frontend with server actions for mutations. Prisma ORM over PostgreSQL for type-safe database access. Better Auth handles session-based authentication with role-based middleware guards. Zod schemas validate all inputs at the boundary layer. Vitest for unit/integration tests, Playwright for E2E flows across multi-branch scenarios.",
     highlights: [
@@ -200,7 +234,7 @@ export const projects: Project[] = [
       "Python",
     ],
     liveDemoUrl: null,
-    githubUrl: null,
+    githubUrl: "https://github.com/itzzsaadi/",
     architecture:
       "React SPA frontend communicates with a FastAPI backend. Source code is parsed into Abstract Syntax Trees using Tree-sitter, then fed into a Qwen2.5-Coder model fine-tuned with QLoRA on a 300K+ vulnerability dataset. PostgreSQL stores scan results and vulnerability patterns. The pipeline supports multi-language parsing and severity-ranked output.",
     highlights: [
@@ -220,7 +254,7 @@ export const projects: Project[] = [
     image: "/projects/ecommerce.jpg",
     techStack: ["ASP.NET MVC", "C#", "SQL Server", "Bootstrap", "JavaScript"],
     liveDemoUrl: null,
-    githubUrl: null,
+    githubUrl: "https://github.com/itzzsaadi/ECommerceProject",
     architecture:
       "Classic MVC architecture with ASP.NET. Controller layer handles routing and business logic, Entity Framework maps to SQL Server database. Bootstrap-based responsive frontend with JavaScript for dynamic interactions. Supports product CRUD, cart management, and order lifecycle tracking.",
     highlights: [
@@ -239,7 +273,7 @@ export const projects: Project[] = [
     image: "/projects/ai-text.jpg",
     techStack: ["Python", "Tesseract OCR", "LinearSVC", "OpenCV", "scikit-learn"],
     liveDemoUrl: null,
-    githubUrl: null,
+    githubUrl: "https://github.com/itzzsaadi/AI-Image-to-Text",
     architecture:
       "Image input is preprocessed with OpenCV (noise reduction, binarization, deskewing) before passing to Tesseract OCR for text extraction. Extracted text is vectorized using TF-IDF and classified by a LinearSVC model trained on labeled toxicity datasets. The pipeline outputs confidence scores and category labels.",
     highlights: [
@@ -258,7 +292,7 @@ export const projects: Project[] = [
     image: "/projects/library.jpg",
     techStack: ["SQL", "Database Design", "Stored Procedures", "ER Modeling"],
     liveDemoUrl: null,
-    githubUrl: null,
+    githubUrl: "https://github.com/itzzsaadi/Advanced-Library-Management-System",
     architecture:
       "Normalized relational schema with proper foreign key constraints and indexes. Features complex JOIN queries, subqueries, CTEs, and stored procedures for book availability tracking, overdue calculations, and member history. ER modeling covers Books, Authors, Members, Loans, Reservations, and Fines.",
     highlights: [
@@ -343,5 +377,5 @@ export const testimonials: Testimonial[] = [
 
 // ─── Formspree ───────────────────────────────────────────────────────────────
 
-// Replace with your actual Formspree endpoint after creating a form at https://formspree.io
-export const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwlpzwap";
+const formspreeId = process.env.FORMSPREE_FORM_ID;
+export const FORMSPREE_ENDPOINT = `https://formspree.io/f/${formspreeId}`;

@@ -99,22 +99,22 @@ export default function GitHubActivity() {
   const displayUser = user || null;
 
   return (
-    <section id="github" className="relative py-24 px-6">
+    <section id="github" className="relative py-12 sm:py-16 px-6">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
-          className="mb-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
+          className="mb-8 text-center"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
         >
-          <span className="pill pill-accent mb-4 inline-block">Open Source</span>
+          <span className="pill pill-accent mb-3 inline-block">Open Source</span>
           <h2 className="text-3xl font-bold sm:text-4xl">
             GitHub{" "}
             <span className="gradient-text">Activity</span>
           </h2>
-          <p className="mt-4 text-[var(--color-text-muted)]">
+          <p className="mt-2 text-sm text-[var(--color-text-muted)]">
             Live statistics from{" "}
             <a
               href={`https://github.com/${GITHUB_USERNAME}`}
@@ -147,7 +147,7 @@ export default function GitHubActivity() {
 
             {/* Stats Cards */}
             <motion.div
-              className="mb-12 grid grid-cols-2 gap-4 sm:grid-cols-4"
+              className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

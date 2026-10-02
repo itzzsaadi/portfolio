@@ -8,9 +8,10 @@ import Image from "next/image";
 
 const roles = [
   "Full Stack Developer",
-  "Applied AI Integrator",
-  "Next.js Engineer",
-  "Python & ML Builder",
+  "Backend Developer",
+  ".NET Developer",
+  "AI Product Developer",
+  "AI / ML Engineer",
 ];
 
 export default function Hero() {
@@ -47,7 +48,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+      className="relative flex min-h-[85vh] sm:min-h-[90vh] items-center justify-center overflow-hidden px-6 pt-20 pb-12 sm:pt-24 sm:pb-16"
     >
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-12 lg:flex-row lg:gap-16">
         {/* Left: Text Content */}
