@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import TubesCursor from "@/components/TubesCursor";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,9 +16,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Saad Naseer — Full Stack Developer & Applied AI Integrator",
+  title: "Saad Naseer",
   description:
-    "Portfolio of Saad Naseer — a Full Stack Developer and Applied AI Integrator based in Lahore, Pakistan. Building production-grade web applications and AI-powered tools with Next.js, TypeScript, React, Python, and fine-tuned LLMs.",
+    "Portfolio of Saad Naseer a Full Stack Developer and Applied AI Integrator based in Lahore, Pakistan. Building production-grade web applications and AI-powered tools with Next.js, TypeScript, React, Python, and fine-tuned LLMs.",
   keywords: [
     "Saad Naseer",
     "Full Stack Developer",
@@ -42,11 +43,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${jetbrains.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-[var(--font-inter)]">
-        <div className="ambient-grid" aria-hidden="true" />
-        <div className="dot-grid" aria-hidden="true" />
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col font-[var(--font-inter)]"
+      >
+        <div aria-hidden="true">
+          <div className="ambient-grid" />
+          <div className="dot-grid" />
+        </div>
+        <TubesCursor />
         {children}
       </body>
     </html>
